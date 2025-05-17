@@ -38,6 +38,7 @@ class AnalogConfigESP32 : public AudioInfo {
     bool uninstall_driver_on_end = true;
     int mode_internal; 
     int adc_pin;
+    int interrupt_priority = ESP_INTR_FLAG_LEVEL1;
 
     /// Default constructor
     AnalogConfigESP32(RxTxMode rxtxMode=TX_MODE) {
