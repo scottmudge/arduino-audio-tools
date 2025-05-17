@@ -69,7 +69,8 @@ class I2SConfigESP32 : public AudioInfo {
     int buffer_count = I2S_BUFFER_COUNT;
     int buffer_size = I2S_BUFFER_SIZE;
     bool auto_clear = I2S_AUTO_CLEAR;
-    bool use_apll = I2S_USE_APLL; 
+    bool use_apll = I2S_USE_APLL;
+    int interrupt_priority = ESP_INTR_FLAG_LEVEL1;
     uint32_t fixed_mclk = 0; 
 #if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0 , 0)
     int channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT;

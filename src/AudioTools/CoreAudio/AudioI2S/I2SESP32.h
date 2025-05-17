@@ -191,7 +191,7 @@ class I2SDriverESP32 {
         .bits_per_sample = (i2s_bits_per_sample_t)cfg.bits_per_sample,
         .channel_format = (i2s_channel_fmt_t)cfg.channel_format,
         .communication_format = toCommFormat(cfg.i2s_format),
-        .intr_alloc_flags = 0,  // default interrupt priority
+        .intr_alloc_flags = cfg.interrupt_priority,  // default interrupt priority
         .dma_buf_count = cfg.buffer_count,
         .dma_buf_len = cfg.buffer_size,
         .use_apll = (bool)cfg.use_apll,

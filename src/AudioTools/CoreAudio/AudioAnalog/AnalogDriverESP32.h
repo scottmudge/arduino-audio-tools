@@ -62,7 +62,7 @@ class AnalogDriverESP32  : public AnalogDriverBase {
             .bits_per_sample        = (i2s_bits_per_sample_t)cfg.bits_per_sample,
             .channel_format         = (cfg.channels == 1 && cfg.rx_tx_mode == RX_MODE) ? I2S_CHANNEL_FMT_ONLY_LEFT :I2S_CHANNEL_FMT_RIGHT_LEFT,
             .communication_format   = (i2s_comm_format_t)0,
-            .intr_alloc_flags       = 0,
+            .intr_alloc_flags       = cfg.interrupt_priority,
             .dma_buf_count          = cfg.buffer_count,
             .dma_buf_len            = cfg.buffer_size,
             .use_apll               = cfg.use_apll,
